@@ -22,14 +22,16 @@ const Slide = () => {
       {/* <MdChevronLeft
       className='opacity-50 cursor-pointer hover:opacity-100' 
       onClick={sliderLeft} size={40}/> */}
-      <div id='example' className='w-full h-full overflow-x-scroll whitespace-nowrap scroll-smooth'>
+      <div id='example' className='w-full h-[400px] h-full overflow-x-scroll whitespace-nowrap scroll-smooth'>
         {data.map((item) => (
           // eslint-disable-next-line @next/next/no-img-element
-          <img
-            className='w-[340px] h-[400px] inline-block p-2 cursor-pointer hover:scale-105 ease-in-out duration-300 rounded-xl'
-            key={item.id}
-            src={item.image} alt='/'
-          />
+          <div className="inline-block w-[340px] h-[400px] grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+            <img
+              className='w-[340px] inline-block p-2 cursor-pointer hover:scale-105 ease-in-out duration-300 rounded-xl'
+              key={item.id}
+              src={item.image} alt='/'
+            />
+          </div>
         ))}
       </div>
       {/* <MdChevronRight className='opacity-50 cursor-pointer hover:opacity-100' onClick={sliderRight} size={40}/> */}
